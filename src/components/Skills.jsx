@@ -17,18 +17,18 @@ const skills = [
 
 const Skills = () => {
   return (
-    <div className="min-h-screen bg-gray-800 text-white flex flex-col items-center justify-center p-8">
-      <h1 className="text-5xl font-bold mb-16">Skills</h1>
-      <div className="flex flex-wrap justify-center gap-8">
+    <div id="skills" className="min-h-screen bg-primary text-text flex flex-col items-center justify-center p-8">
+      <h1 className="text-5xl font-bold mb-16 font-heading text-accent">Skills</h1>
+      <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
         {skills.map((skill, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="bg-gray-900 p-4 rounded-lg shadow-lg"
+            className="bg-secondary p-4 rounded-lg shadow-lg"
           >
-            <p className="text-xl">{skill.name}</p>
+            <p className="text-xl font-body">{skill.name}</p>
           </motion.div>
         ))}
       </div>

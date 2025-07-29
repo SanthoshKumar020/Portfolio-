@@ -19,33 +19,37 @@ const RotatingBox = () => {
   );
 };
 
+import { theme } from '../theme';
+
 const Hero = () => {
   return (
-    <div className="h-screen bg-black">
+    <div id="hero" className="h-screen bg-primary">
       <Canvas>
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
         <RotatingBox />
         <Text
           position={[0, 1.5, 0]}
-          color="white"
+          color={theme.colors.accent}
           fontSize={0.5}
-          glowColor="blue"
-          emissive="blue"
+          font={theme.fonts.heading}
+          glowColor={theme.colors.accent}
+          emissive={theme.colors.accent}
           emissiveIntensity={2}
         >
           Santhoshkumar K
         </Text>
         <Text
           position={[0, 1, 0]}
-          color="white"
+          color={theme.colors.text}
           fontSize={0.2}
+          font={theme.fonts.body}
         >
           Full-Stack Web Developer
         </Text>
       </Canvas>
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
-        <button className="px-8 py-4 text-white bg-blue-500 rounded-full hover:bg-blue-700">
+        <button className="px-8 py-4 text-primary bg-accent rounded-full hover:bg-link">
           Explore My Work
         </button>
       </div>

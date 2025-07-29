@@ -52,12 +52,12 @@ const Experience = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-gray-800 text-white flex flex-col items-center justify-center p-8">
-      <h1 className="text-5xl font-bold mb-16">Experience</h1>
+    <div id="experience" ref={containerRef} className="min-h-screen bg-primary text-text flex flex-col items-center justify-center p-8">
+      <h1 className="text-5xl font-bold mb-16 font-heading text-accent">Experience</h1>
       <div className="space-y-12">
         {experiences.map((exp, index) => (
-          <div key={index} className="experience-card bg-gray-900 p-8 rounded-lg shadow-lg max-w-3xl">
-            <h2 className="text-3xl font-bold">{exp.title}</h2>
+          <div key={index} className="experience-card bg-secondary p-8 rounded-lg shadow-lg max-w-3xl">
+            <h2 className="text-3xl font-bold font-heading">{exp.title}</h2>
             <p className="text-xl text-gray-400 mb-2">{exp.company} | {exp.period}</p>
             <ul className="list-disc list-inside">
               {exp.description.map((item, i) => (

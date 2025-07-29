@@ -27,12 +27,12 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-8">
-      <h1 className="text-5xl font-bold mb-16">Projects</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div id="projects" className="min-h-screen bg-secondary text-text flex flex-col items-center justify-center p-8">
+      <h1 className="text-5xl font-bold mb-16 font-heading text-accent">Projects</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
         {projects.map((project, index) => (
-          <div key={index} className="bg-gray-800 p-8 rounded-lg shadow-lg">
-            <h2 className="text-3xl font-bold mb-2">{project.title}</h2>
+          <div key={index} className="bg-primary p-8 rounded-lg shadow-lg flex flex-col">
+            <h2 className="text-3xl font-bold mb-2 font-heading">{project.title}</h2>
             {project.technologies && <p className="text-xl text-gray-400 mb-4">{project.technologies}</p>}
             <p className="text-lg mb-4">{project.description}</p>
             {project.link && (
@@ -40,7 +40,7 @@ const Projects = () => {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-600 transition-colors"
+                className="text-link hover:text-accent transition-colors"
               >
                 View Project
               </a>
