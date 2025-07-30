@@ -80,8 +80,12 @@ class HomeScreenBloc extends Bloc<HomeScreenEvent, HomeScreenState> {
   void _onSendCommand(SendCommandEvent event, Emitter<HomeScreenState> emit) async {
     emit(HomeScreenProcessing());
     try {
+      // When deployed, the app will be on the same domain as the API.
+      // For local testing, you might need to change this back to http://10.0.2.2:8000
+      const apiUrl = '/api/execute';
+
       final response = await http.post(
-        Uri.parse('http://10.0.2.2:8000/execute-command/'), // 10.0.2.2 is for Android emulator
+        Uri.parse(apiUrl),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
