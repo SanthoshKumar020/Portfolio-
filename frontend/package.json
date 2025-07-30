@@ -1,0 +1,8 @@
+{
+  "name": "neura-frontend-build",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "git clone https://github.com/flutter/flutter.git --branch 3.22.3 --depth 1 && ./flutter/bin/flutter pub get && ./flutter/bin/flutter build web --release"
+  },
+  "dependencies": {}
+}
