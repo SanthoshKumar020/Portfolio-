@@ -6,12 +6,10 @@
       "use": "@vercel/python"
     },
     {
-      "src": "frontend/pubspec.yaml",
-      "use": "@vercel/flutter",
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
       "config": {
-        "web": {
-          "entrypoint": "lib/main.dart"
-        }
+        "distDir": "frontend/build/web"
       }
     }
   ],
@@ -22,7 +20,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "frontend"
+      "dest": "frontend/build/web/$1"
     }
   ]
 }
